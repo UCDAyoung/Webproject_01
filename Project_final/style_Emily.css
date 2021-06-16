@@ -1,0 +1,313 @@
+/* 애니메이션 */
+@keyFrames rolling {
+    0% {
+        transform: translateY(+20%);
+    }
+
+    25% {
+        transform: translateY(0%);
+        /* margin-top : 0; */
+    }
+
+    50% {
+        transform: translateY(-20%);
+        /* margin-top : 1.5em; */
+    }
+
+    75% {
+        transform: translateY(-40%);
+        /* margin-top : 3em; */
+    }
+
+    100% {
+        transform: translateY(-60%);
+        /* margin-top : 4.5em; */
+    }
+}
+.profile-header p,.timeline p,.Review p,.list dd{
+    transition: color 1s ease;
+}
+.profile-header p:hover,.timeline p:hover,.Review p:hover,.list dd:hover{
+    color:#ccc;
+}
+
+/*name-job-list 0~100%까지 가면서 변화
+margin-top으로 효과를 주는 것보다 transform을 이용해서 변화주는게 더 성능도 좋음.
+transform : translateY() : 자신의 요소 성분의 Y를 조절
+*/
+
+/*CSS Reset초기화 는 항상 처음에 */
+body,h1,h2,h3,p,ul,dl,dd{
+    margin: 0;
+    padding: 0;
+}
+
+li {
+    list-style-type: none;
+}
+
+body {
+    background-color: #111;
+    color: #999;
+    font-family: 'Cormorant Garamond', serif;
+}
+
+h1,h2,h3 {
+    font-size: 100%;
+    font-weight: normal;
+}
+
+a {
+    color: inherit;
+    /*부모 칼라 상속 */
+    text-decoration: none;
+}
+
+/*여기까지 초기화*/
+#portrait {
+    background-image: url(images/emily01.jpg);
+    /*tip : height를 padding-top과 padding-bottom으로 대신 잡는다.*/
+    /*ex) height :200px; 처럼 고정시키지 않음.*/
+    padding-top: 56.25%;
+    /*부모태그의 width기준! 9/16 = 0.5625 이다. 부모의 가로 길이의 56%만큼 padding-top으로 잡는다.*/
+    background-size: cover;
+    /*이미지 비율 유지한 상태에서 알아서 사이즈 조절해줌*/
+    background-position: center;
+    /*이미지 위치*/
+}
+
+.name {
+    
+    font-size: 30px;
+    line-height: 1.5;
+    /* 글자 높이 기준을 30px을 1로 정한다. 와.. 그래서 30px로 조정하면 글자 높이 딱 맞게 조절이 가능*/
+    margin-bottom: 40px;
+    font-style: italic;
+    /*sticky요소 설정 */
+    position : sticky; 
+    top:-1.5em;
+    background-color: #111;;
+    box-shadow: 0 0 10px 10px #111;
+    /*static 인 부모 요소가 끝날 때까지 요소가 따라간다.그렇다는건? 부모요소의 크기를 생각해서 짜자*/
+}
+
+.name-job {
+    display: inline-block;
+    background-color: #111;
+    color: white;
+    vertical-align: top;
+    /*옆 요소와 top부분을 맞춤 */
+    height: 1.5em;
+    /*1. 높이를 부모의 높이 30px의 1배니까 30px로 제한을 하는 것, 일부로 font크기 바뀔걸 대비해서 단위 em으로 설정*/
+    overflow: hidden;
+    /*2. overflow 한 건 hidden처리*/
+    box-shadow: inset 0 0 50px #111;
+    /* 박스가 흐리게 */
+    position: relative;
+}
+
+/*after로 만들어진 가상요소는 .name_job앞의 자식으로 생성된다. 
+박스위에 박스하나를 덮어 씌운것*/
+.name-job::after {
+    content: " ";
+    position: absolute;
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    margin-left: -1em;
+    box-shadow: inset 0 0 10px 8px #111;
+
+}
+
+.name-job-list {
+    margin-top: -1.5em;
+    animation-name: rolling;
+    animation-duration: 10s;
+    animation-iteration-count: infinite;
+    /*
+    0em : 
+    1em :  
+    -1.5em : 
+    */
+}
+
+.name-title {
+    font-size: 2.3em;
+    /*em 단위로 했기때문에, 부모태그 .name 의 크기가 달라지면 비율맞춰서 조정가능 */
+    line-height: 0.8em;
+    color: deeppink;
+    margin-left: -0.7em;
+    position: relative;
+    /*z-index필요없이 Position속성이 static이 아니면 앞에 나오게 된다.*/
+    
+    
+}
+
+.profile {
+    font-family: 'Cormorant Garamond', serif;
+    padding: 7%;
+    /*%퍼센트 : 부모태그의 너비의 변화에 따라 바뀐다.*/
+}
+
+.profile-header,
+.profile-section {
+    padding-bottom: 7%;
+
+}
+
+.profile-section h2 {
+    border-top: 3px solid;
+    margin-bottom: 30px;
+    font-size: 1.5em;
+    color: orangered;
+    /*sticky요소 설정 */
+    position : sticky; 
+    top:0em;
+    background-color: #111;;
+    box-shadow: 0 0 10px 10px #111;
+    /*static 인 부모 요소가 끝날 때까지 요소가 따라간다.그렇다는건? 부모요소의 크기를 생각해서 짜자*/
+}
+
+/*밑에 출연진, 줄거리, 감상평 등*/
+.icons {
+    margin-bottom: 30px;
+}
+
+.icons li {
+    display: inline-block;
+}
+
+.icons i:hover {
+    color: deeppink;
+}
+
+.timeline {
+    font-size: 0.7rem;
+    /*px로 설정해주는 것보다 애초에 초기에 설정해준 값 기준으로 조정하는게 better*/
+    color: #666;
+}
+
+.timeline h3 {
+    color: orange;
+}
+.Review h3{
+    color: orange;
+}
+.Review p {
+    color: #555;
+    font-size: 1em;
+}
+.timeline li h3 {
+    font-size: 1.0rem;
+    /* float: left; */
+    margin-right: 0.5rem;
+    border-top: 2px solid;
+    letter-spacing: 0.1em;
+    /*글자 사이 간격*/
+}
+
+.timeline li {
+    padding-bottom: 30px;
+}
+
+.timeline li:last-child {
+    padding-bottom: 0;
+}
+
+.graph li {
+    background-color: dodgerblue;
+    color: white ;
+    font-weight: bold;
+    padding: 0.2em 1em;
+    margin: 0.5em 0;
+    border-radius: 50px;
+    box-sizing: border-box;
+    background: rgb(176,0,208);
+    background: linear-gradient(90deg, rgba(176,0,208,0.9552238805970149) 22%, rgba(175,0,255,0.8407738095238095) 43%, rgba(175,0,255,1) 57%, rgba(132,0,255,1) 72%, rgba(68,0,255,0.8407738095238095) 100%);
+    /*css gradient*/
+}
+
+/*
+1. before라는 가상요소는 앞의 태그 자식요소로 생성된다.
+html에서 확인해보면 <li>태그와 <h3>태그 사이에 생성된다.
+2. att(속성) 속성 값 불러오기  
+html에서 확인해보면 li안에 data-score 속성을 우리 입맛대로 넣어놓음.*/
+.graph li::before {
+    content: attr(data-score);
+    float: right;
+}
+
+/*
+1.box-sizing : border-box
+테두리를 포하한 크기 만큼 박스를 만든다. 
+아래는 속성값마다 일일히 설정*/
+.graph li[data-score="10.0"] {width: 100%;}
+
+.graph li[data-score="7.0"] {
+    width: 70%;
+}
+
+.graph li[data-score="6.3"] {
+    width: 63%;
+}
+
+.graph li[data-score="8.0"] {
+    width: 80%;
+}
+.list dt{
+    color:orange;
+    float:left;
+    width : 3em; /*정렬*/
+}
+
+/*
+미디어태그 조건 : 800px을 넘어간다면? 
+
+이 조건에서 작업을 다 아래서  
+
+vw: viewport weight  전체 스크린기준 넓이
+vh: viewport height  전체 스크린 기준 높이 
+*/
+@media(min-width: 800px){
+    #portrait{
+        position: fixed;
+        left :0;
+        top : 0;
+        width : 60vw; /*전체 스크린기준 60% 넓이로*/
+        height : 100vh;
+        padding: 0; /*height을 100vh로 설정했더니, 높이가 기본 사진보다 훨 높아져서 그런지 사진이 제대로 출력이 안됨.
+        그래서 padding을 0으로 설정했더니   사진의 크기가 정상적으로 맞춰짐 */
+    }
+    .profile{
+        margin-left: 60vw;
+    }
+
+    .name{
+        font-size: 2.3vw; /*창 크기에 비례하게 변하게 하기 위해*/
+    }
+    /*지그재그 효과*/
+    /*1번째 timeline li의 크기를 모두 절반으로*/
+    .timeline li{
+        width :50%;
+        /* padding: 0 10px; */
+        /*이거로 width를 결정해버릴 수 있는듯*/
+        /* box-sizing: border-box; */
+    }
+    /*2번째 짝수들만 마진left로 오른쪽으로?? 이게 우째댐 */
+    .timeline li:nth-child(even) {
+        margin-left: auto;
+        /*문장이 겹쳐보이기 위해서 위,아래를 조작*/
+        /* margin-top : -100px;
+        margin-bottom: -100px; */
+
+    }
+    .timeline{
+        margin: 0 -10px;
+    }
+}
+audio{
+    opacity: 50%;
+}
+
+

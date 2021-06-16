@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>영화 소개 | 에밀리, 파리에 가다</title>
+    <link rel="stylesheet" href="style_Emily.css">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300&display=swap" rel="stylesheet">
+    <!--font설정1 -->
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Viaoda+Libre&display=swap" rel="stylesheet">
+    <!--font설정2 -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.14.0/css/all.css" integrity="sha384-HzLeBuhoNPvSl5KYnjx0BT+WB0QEEqLprO+NBkkk5gbc67FTaL7XIGa2w1L0Xbgc" crossorigin="anonymous">
+    <script>
+        var Portrait = document.getElementById('portrait');
+        var imgIdx=0;
+        var imgList = ['images/paris01.jpg','images/france02.jpg'];
+
+        function changeImage(){
+            Portrait.style.backgroundImage = "url("+imgList[imgIdx]+")";   
+            imgIdx
+            if(imgIdx>=imgList.length)
+                imgIdx=0;
+        }
+        setInterval(changeImage,1000);            
+    </script>
+</head>
+<body> 
+    <div id="portrait"></div>
+    <div class="profile">
+        <div class="profile-header">
+            <div class="name">
+                Reported by 
+                <div class="name-job">
+                    <ul class ="name-job-list">                        
+                        <li>JunYoung</li>
+                        <li>Developer</li>
+                        <li>JunYoung</li>
+                        <li>Designer</li>                        
+                        <li>JunYoung</li>                        
+                    </ul>
+                </div>
+                <h1 class ="name-title">EMILY IN PARIS</h1>
+            </div>
+            <p>Bonjour, Paris!<br> 낭만의 도시에서 꿈의 직장을 갖게 된 에밀리.<br> 프랑스어는 못하지만, 마케팅이라면 자신 있다.<br>그러나 쉽지 않은 인생. <br>사랑과 우정은 여기서도 복잡하다.</p>
+        </div>
+        <div class="icons">
+            <ul>
+                <li><a href="https://www.facebook.com/NetflixKR/"><i class="fab fa-facebook" style="font-size: 30px;"></i></a></li>
+                <li><a href="https://twitter.com/netflixkr"><i class="fab fa-twitter" style="font-size: 30px;"></i></a></li>
+                <li><a href="https://www.instagram.com/emilyinparis/"><i class="fab fa-instagram"style="font-size: 30px;"></i></a></li> 
+            </ul>
+        </div>
+        <div class="profile-section">
+            <h2>Actor</h2>
+            <ul class="timeline">
+                <li>
+                    <h3>Emily Cooper</h3>
+                    <p> 릴리 콜린스(Lily Collins)<br>
+                        시카고 길버트 그룹의 상사 대신 1년 동안 파리의 마케팅 회사 사부아르에서 일하게 된 미국인                          
+                    </p>
+                </li>
+                <li>
+                    <h3>Sylvie Grateau</h3>
+                    <p> 필립핀 르루아-보리외(Philippine Leroy-Beaulieu)<br>
+                        에밀리의 사부아르 상사      
+                    </p>
+                </li>
+                <li>
+                    <h3>Julien</h3>
+                    <p> 새뮤얼 아놀드(Samuel Arnold)<br>
+                        사부아르에서 일하는 에밀리의 직장 동료
+                    </p>
+                </li>
+                <li>
+                    <h3>Luc</h3>
+                    <p> 브루노 구에리(Bruno Gouery)<br>
+                        사부아르에서 일하는 에밀리의 직장 동료
+                    </p>
+                </li>
+                <li>
+                    <h3>Mindy Chen</h3>
+                    <p>  애슐리 박(Ashley Park)<br>
+                        에밀리의 친구
+                    </p>
+                </li>
+                <li>
+                    <h3>Gabriel</h3>
+                    <p>  루카스 브라보(Lucas Bravo)<br>
+                        에밀리의 아래층 이웃이자 타파스의 셰프.
+                    </p>
+                </li>
+                <li>
+                    <h3>Camille</h3>
+                    <p>  카미유 라자트(Camille Razat)<br>
+                        에밀리의 친구
+                    </p>
+                </li>
+                <li>
+                    <h3>Paul Brossard</h3>
+                    <p> 아르노 비야르(Arnaud Viard)<br>
+                        사부아르의 대표
+                    </p>
+                </li>
+            </ul>
+            <h2>Review</h2>
+            <ul class="Review">
+                <li>
+                    <h3>elisa_favre</h3>
+                    <p> 
+                        시작은 좋았지만 지루해진다. 만약 패션을 좋아한다면 볼만하다.
+                    </p>
+                </li>
+                <li>
+                    <h3>paysagiste</h3>
+                    <p> 프랑스 배우들이 영어를 잘하는 것을 처음 본다. 이 드라마 좋아.     
+                    </p>
+                </li>
+                <li>
+                    <h3>rainergyneverdies</h3>
+                    <p> 
+                        매회 믿을 수 없다. 여기에 나오는 배우들 전부 사랑해! 너무 좋아. 완전히 중독됐어! 시즌 2는 언제 나오는 거야?
+                    </p>
+                </li>
+                <li>
+                    <h3>smcgarvey1987</h3>
+                    <p> 난 이 쇼의 모든 것이 싫다. 에밀리는 아마도 오래간만에 스크린을 장식한 가장 짜증 나는 캐릭터일 것이다. 그녀는 너무 짜증 난다. 그녀가 실패하길 바라며 우쭐한 표정을 보기 싫다.
+                    </p>
+                </li>
+                <li>
+                    <h3>i_baddevil</h3>
+                    <p> 너무 좋아. 복잡하지 않은 신선한 공기 즐겁고 파리에 가고 싶어진다.
+                    </p>
+                </li>
+                <li>
+                    <h3>박준영</h3>
+                    <p> 개연성의 허점을 많이 보였다는 평이 있다.하지만, 파리의 이면을 보고 싶지 않은 사람으로서, 환상을 불러일으키기 너무 좋았다. 
+                        여전히 가보고 싶은 곳이다.
+                    </p>
+                </li>
+            </ul>                  
+        </div> 
+        <div class="profile-section">
+            <h2>Critics Consensus</h2>
+            <ul class="graph">
+                <li data-score ="10.0"><h3>Beauty in Paris</h3></li>
+                <li data-score ="6.3"><h3>Fresh</h3></li>
+                <li data-score ="8.0"><h3>Review</h3></li>
+                <li data-score ="7.0"><h3>Average</h3></li>
+            </ul>         
+        </div> 
+        <div class="profile-section">
+            <h2>My Contact</h2>
+            <!-- dL : definition list  / dt : ~ term 제목 / dd : ~ description 설명/ -->
+            <dl class="list">
+                <dt>Cell.</dt>
+                <dd>+82)1012345678</dd>
+                <dt>E-mail</dt>
+                <dd>gyeh159@naver.com</dd>
+                <dt>Blog</dt>
+                <dd>www.beingdesigner.com</dd>
+            </dl>
+        </div> 
+        <audio autoplay controls><source src="audio/bensound-thejazzpiano.mp3" type="audio/mp3" > </audio>
+
+</body>        
+
+</head>
+<body>
+
+</body>
+</html>

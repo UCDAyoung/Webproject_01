@@ -1,62 +1,203 @@
 <!DOCTYPE html>
-<html lang="UTF-8">
+<html lang="ko">
+
 <head>
-<title>Brandie</title>
+    <meta charset="UTF-8">
+    <meta name = "author" content="박준영">
+    <meat name = "description" content ="기말 프로젝트">
+    <title>Brandie</title>
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300&display=swap" rel="stylesheet">
+    <!--font설정 -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.14.0/css/all.css" integrity="sha384-HzLeBuhoNPvSl5KYnjx0BT+WB0QEEqLprO+NBkkk5gbc67FTaL7XIGa2w1L0Xbgc" crossorigin="anonymous">
 </head>
 <script>
     var widthL = window.innerWidth;
     var img = document.getElementsByTagName("img");
 
     // img.style.width =widthL;
-</script>    
+</script>
 <style>
-body,ul,li{
-    margin: 0;
-}
-footer{
-    background-color: grey;
-}
-ul{
-    list-style: none;
-}
-li{
-    float : left;
-    /* background-color: rgb(243, 237, 183); */
-    /* 하이퍼링크 줄,색 없애기 ~ none인데 검색필요 */
-}
-li:not(#brand){
-    margin-left: 30px;
-}
-#brand{
-    margin-left: 10%;
-    margin-right: 10%;
-    font-size: 50px;
-}
-img{
-    opacity: 90%;
-    width: 1440px;
-}
+    body {
+        margin: 0;
+        font-family: 'Cormorant Garamond', serif;
+    }
+
+    #wrap {
+        width: 1440px;
+        margin: auto;
+    }
+
+    /*헤더*/
+    header {
+        background: url(/image/paris01.jpg);
+        width: 100%;
+        height: 300px;
+    }
+
+    /*이미지 넣을 수 있음*/
+    .container {
+        width: 1200px;
+        height: 100%;
+        margin: 0 auto;
+        background: rgb(0, 0, 0, 0.3);
+    }
+
+    /*rgb값으로도 투명도 조절 가능하네*/
+    header .header_menu a {
+        text-align: center;
+        padding: 8px 0px 8px 6px;
+        display: inline-block;
+        font-size: 30px;
+        color: #fff;
+        transition: color 0.7s ease;
+        font-family: 'Cormorant Garamond', serif;
+        text-decoration: none;
+
+    }
+
+    header .header_menu :hover {
+        color: #ccc;
+    }
+
+    /*미디어태그 아직 모르겠음..*/
+    @media(max-width: 1220px) {
+        .container {
+            width: 100%;
+        }
+
+        .row {
+            padding: 0 10px;
+        }
+    }
+
+
+    /**/
+    img {
+        opacity: 90%;
+        width: 100%;
+    }
+
+    ul {
+        list-style: none;
+    }
+
+    li {
+        float: left;
+        /* background-color: rgb(243, 237, 183); */
+        /* 하이퍼링크 줄,색 없애기 ~ none인데 검색필요 */
+    }
+
+    li:not(#brand) {
+        margin-left: 30px;
+    }
+
+    #brand {
+        margin-left: 10%;
+        margin-right: 10%;
+        font-size: 50px;
+    }
+
+    #footer {
+        background: #ccc;
+    }
+    #footer h1, div {display: inline-block;}
+    #footer ul { 
+
+        display: flex;
+        align-content: start;
+        flex-direction : column;
+        }
+    #footer .container{
+        align-items: center;
+    }
+    #footer .container ul{
+     
+    }
+    #footer .footer_icon a {
+        text-decoration: none;
+        color: #fff;
+        
+    }
 </style>
+
 <body>
-<div><img src="/image/village_top.jpg" alt= "France"></div>
-<div class ="header">
-    <ul>
-        <li id="brand"><a>brandlogo</a></li>
-        <li id ="category"><a href="/Categoty.html">Category</a></li>
-        <li><a href="/Works.html">Works</a></li>
-        <li><a href="/History.html">History</a></li>
-        <li><a href="/Contact.html">Contact</a></li>
-    </ul>
-    </a>
-</div>
-<img src="/image/village_bottom.jpg" alt="France">
-<div>들어갈 곳 & 여기 안에 문 넣기  </div>
-<footer>
-    contact 연락처
-    <div>?</div>
-    <div>?</div>
-    <div>?</div>
-    <div>?</div>
-</footer>
+    <div id="wrap">
+        <header>
+            <div class="row">
+                <div class="container">
+                    <div class="_header">
+                        <div class="header_menu">
+                            <a href="#">Category</a>
+                            <a href="#">History</a>
+                            <a href="#">Contact</a>
+                            <a href="#">Blog</a>
+                        </div>
+                        <!--//header_menu-->
+                        <div class="header_title">
+                            <h1></h1>
+                            <a href="주소">Be Creative</a>
+                        </div>
+                        <!--//header_title-->
+                    </div>
+                </div>
+            </div>
+        </header>
+        <ul>
+            <li id="brand"><a>brandlogo</a></li>
+            <li id="category"><a href="/Categoty.html">Category</a></li>
+            <li><a href="/Works.html">Works</a></li>
+            <li><a href="/History.html">History</a></li>
+            <li><a href="/Contact.html">Contact</a></li>
+        </ul>
+        </a>
+    </div>
+    <img src="/image/village_bottom.jpg" alt="France">
+    <div>들어갈 곳 & 여기 안에 문 넣기 </div>
+    <footer id="footer">
+        <div class="row ">
+            <div><h1>Contact</h1></div>
+            <div class ="container">
+                <div class ="container_1">
+                    <h3>About us</h3>
+                    <div>
+                    <ul>
+                        <li>History</li>
+                        <li>Works</li>
+                        <li>Content</li>
+                        <li>Future</li>
+                    </ul>
+                    </div>
+                </div>
+                <div class ="container_">
+                    <h3>Category</h3>
+                    <div>
+                    <ul>
+                        <li>Music</li>
+                        <li>Drawing</li>
+                        <li>Writting</li>
+                        <li>HandWork</li>
+                    </ul>
+                    </div>
+                </div>
+                <div >
+                <h3>Follow us</h3>
+                <div class ="footer_icon">
+                    <ul>
+                        <li><a href="github.com"><i class="fab fa-github-square"></i><span>Github</span></a>
+                        <li><a href="www.twitter.com.com"><i class="fab fa-twitter-square"></i>twitter</li>
+                        <li><a href="www.facebook.com"><i class="fab fa-facebook-square"></i><span>Facebook</span></li>
+                    </ul>
+                </div>
+                </div>
+            </div>
+            <h6 style="text-align: center;">
+                <span style="color: rgb(90, 97, 90); font-size: 12px;">
+                    <em>© Copyright 2021 JunYoung Inc. All Rights Reserved</em>
+                </span>
+            </h6>
+        </div>
+    </footer>
 </body>
+
 </html>

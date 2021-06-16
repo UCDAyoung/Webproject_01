@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Animation</title>
+    <script>
+        window.onload = function () {
+            // 변수를 선언합니다.
+            var count = 0;
+            var image = document.getElementById('image');
+            var frames = [
+                '/hw_image/hw01.png','/hw_image/hw02.png','/hw_image/hw03.png','/hw_image/hw03.png','/hw_image/hw04.png',
+                '/hw_image/hw05.png','/hw_image/hw06.png','/hw_image/hw07.png','/hw_image/hw08.png','/hw_image/hw09.png',
+                '/hw_image/hw10.png','/hw_image/hw11.png','/hw_image/hw12.png','/hw_image/hw13.png','/hw_image/hw14.png',
+                '/hw_image/hw15.png','/hw_image/hw16.png','/hw_image/hw17.png','/hw_image/hw18.png','/hw_image/hw19.png',
+                '/hw_image/hw20.png','/hw_image/hw21.png','/hw_image/hw22.png','/hw_image/hw23.png','/hw_image/hw24.png',
+                '/hw_image/hw25.png','/hw_image/hw26.png','/hw_image/hw27.png','/hw_image/hw28.png','/hw_image/hw29.png',
+                '/hw_image/hw30.png','/hw_image/hw31.png','/hw_image/hw32.png','/hw_image/hw33.png','/hw_image/hw34.png',
+                '/hw_image/hw35.png','/hw_image/hw36.png','/hw_image/hw37.png','/hw_image/hw38.png','/hw_image/hw39.png',
+                '/hw_image/hw40.png','/hw_image/hw41.png'
+            ];
+            // 타이머 반복을 시작합니다.
+            setInterval(function () {
+                image.src = frames[count % frames.length];
+                count = count + 1;
+            }, 1000 / 20);
+        };
+    </script>
+</head>
+<style>
+    #image{
+    opacity: 90%;
+    width: 1440px;
+}
+</style>
+<body>
+    <img id="image">
+</body>
+</html>

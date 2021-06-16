@@ -1,0 +1,24 @@
+body,ul{
+    margin: 0;
+    padding: 0;
+}
+li{
+    list-style-type: none;
+}
+body{
+    background-color : #111;
+    color:#999;
+
+}
+.wrapper{
+    display: flex;
+    height: 100vh;
+    justify-content : center;
+    align-items: center;
+} 
+/* 전체적인 div태그를 감쌀 태그 */
+.team{
+    background-color: aqua;
+    display:flex;e
+}
+/* 실제로 가로,세로 정렬이 될 것 */
